@@ -1,0 +1,80 @@
+import { Link } from "@tanstack/react-router";
+import { Instagram, Facebook, Mail, Phone, ArrowUp } from "lucide-react";
+
+const columns = [
+  {
+    title: "Shop",
+    items: ["Bridal Silk", "Kanchipuram", "Banarasi", "Soft Silk", "Designer"],
+  },
+  {
+    title: "Atelier",
+    items: ["Our Weavers", "Handloom Process", "Authenticity", "Silk Care", "Journal"],
+  },
+  {
+    title: "Support",
+    items: ["Shipping", "Returns", "Size Guide", "Track Order", "FAQs"],
+  },
+];
+
+export function Footer() {
+  return (
+    <footer className="bg-gradient-maroon text-primary-foreground">
+      <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+        <div className="grid gap-14 lg:grid-cols-[1.3fr_2fr]">
+          <div>
+            <span className="font-display text-3xl tracking-[0.2em]">SAHAANA</span>
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
+              Authentic handloom silk sarees, carried from the weaver's loom directly to your
+              wardrobe. No middlemen, no markups — only heritage.
+            </p>
+            <div className="mt-8 flex gap-3">
+              {[Instagram, Facebook, Mail, Phone].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  aria-label={["Instagram", "Facebook", "Email", "Call"][i]}
+                  className="rounded-full border border-primary-foreground/20 p-2.5 transition-colors hover:border-accent hover:text-accent"
+                >
+                  <Icon className="size-4" strokeWidth={1.4} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-10 sm:grid-cols-3">
+            {columns.map((col) => (
+              <div key={col.title}>
+                <p className="text-[11px] uppercase tracking-[0.28em] text-accent">{col.title}</p>
+                <ul className="mt-5 space-y-3">
+                  {col.items.map((item) => (
+                    <li key={item}>
+                      <Link
+                        to="/collections"
+                        className="text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-primary-foreground/15 pt-8 sm:flex-row sm:items-center">
+          <p className="text-xs text-primary-foreground/55">
+            © {new Date().getFullYear()} Sahaana Handloom. Handwoven in India.
+          </p>
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-primary-foreground/70 transition-colors hover:text-accent"
+          >
+            Back to top <ArrowUp className="size-3.5" strokeWidth={1.5} />
+          </button>
+        </div>
+      </div>
+    </footer>
+  );
+}
