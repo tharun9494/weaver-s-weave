@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import weaverHands from "@/assets/weaver-hands.jpg";
-import { Reveal, SectionHeading } from "./Reveal";
+import { Reveal } from "./Reveal";
 
 const steps = [
   { n: "01", title: "Silk yarn", copy: "Mulberry yarn reeled in Ramanagara, degummed and graded by hand." },
