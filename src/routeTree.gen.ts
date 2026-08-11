@@ -12,10 +12,19 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AuthenticityRouteImport } from './routes/authenticity'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as CollectionsRouteImport } from './routes/collections'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as HandloomProcessRouteImport } from './routes/handloom-process'
+import { Route as JournalRouteImport } from './routes/journal'
 import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ReturnsRouteImport } from './routes/returns'
+import { Route as ShippingRouteImport } from './routes/shipping'
+import { Route as SilkCareRouteImport } from './routes/silk-care'
+import { Route as SizeGuideRouteImport } from './routes/size-guide'
+import { Route as TrackOrderRouteImport } from './routes/track-order'
 import { Route as WeaversRouteImport } from './routes/weavers'
 import { Route as WishlistRouteImport } from './routes/wishlist'
 
@@ -34,6 +43,11 @@ const AdminRoute = AdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticityRoute = AuthenticityRouteImport.update({
+  id: '/authenticity',
+  path: '/authenticity',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CartRoute = CartRouteImport.update({
   id: '/cart',
   path: '/cart',
@@ -49,9 +63,49 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqsRoute = FaqsRouteImport.update({
+  id: '/faqs',
+  path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HandloomProcessRoute = HandloomProcessRouteImport.update({
+  id: '/handloom-process',
+  path: '/handloom-process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalRoute = JournalRouteImport.update({
+  id: '/journal',
+  path: '/journal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReturnsRoute = ReturnsRouteImport.update({
+  id: '/returns',
+  path: '/returns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShippingRoute = ShippingRouteImport.update({
+  id: '/shipping',
+  path: '/shipping',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SilkCareRoute = SilkCareRouteImport.update({
+  id: '/silk-care',
+  path: '/silk-care',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SizeGuideRoute = SizeGuideRouteImport.update({
+  id: '/size-guide',
+  path: '/size-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrackOrderRoute = TrackOrderRouteImport.update({
+  id: '/track-order',
+  path: '/track-order',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WeaversRoute = WeaversRouteImport.update({
@@ -69,10 +123,19 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
+  '/authenticity': typeof AuthenticityRoute
   '/cart': typeof CartRoute
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/handloom-process': typeof HandloomProcessRoute
+  '/journal': typeof JournalRoute
   '/profile': typeof ProfileRoute
+  '/returns': typeof ReturnsRoute
+  '/shipping': typeof ShippingRoute
+  '/silk-care': typeof SilkCareRoute
+  '/size-guide': typeof SizeGuideRoute
+  '/track-order': typeof TrackOrderRoute
   '/weavers': typeof WeaversRoute
   '/wishlist': typeof WishlistRoute
 }
@@ -80,10 +143,19 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
+  '/authenticity': typeof AuthenticityRoute
   '/cart': typeof CartRoute
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/handloom-process': typeof HandloomProcessRoute
+  '/journal': typeof JournalRoute
   '/profile': typeof ProfileRoute
+  '/returns': typeof ReturnsRoute
+  '/shipping': typeof ShippingRoute
+  '/silk-care': typeof SilkCareRoute
+  '/size-guide': typeof SizeGuideRoute
+  '/track-order': typeof TrackOrderRoute
   '/weavers': typeof WeaversRoute
   '/wishlist': typeof WishlistRoute
 }
@@ -92,10 +164,19 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
+  '/authenticity': typeof AuthenticityRoute
   '/cart': typeof CartRoute
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/handloom-process': typeof HandloomProcessRoute
+  '/journal': typeof JournalRoute
   '/profile': typeof ProfileRoute
+  '/returns': typeof ReturnsRoute
+  '/shipping': typeof ShippingRoute
+  '/silk-care': typeof SilkCareRoute
+  '/size-guide': typeof SizeGuideRoute
+  '/track-order': typeof TrackOrderRoute
   '/weavers': typeof WeaversRoute
   '/wishlist': typeof WishlistRoute
 }
@@ -105,10 +186,19 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admin'
+    | '/authenticity'
     | '/cart'
     | '/collections'
     | '/contact'
+    | '/faqs'
+    | '/handloom-process'
+    | '/journal'
     | '/profile'
+    | '/returns'
+    | '/shipping'
+    | '/silk-care'
+    | '/size-guide'
+    | '/track-order'
     | '/weavers'
     | '/wishlist'
   fileRoutesByTo: FileRoutesByTo
@@ -116,10 +206,19 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admin'
+    | '/authenticity'
     | '/cart'
     | '/collections'
     | '/contact'
+    | '/faqs'
+    | '/handloom-process'
+    | '/journal'
     | '/profile'
+    | '/returns'
+    | '/shipping'
+    | '/silk-care'
+    | '/size-guide'
+    | '/track-order'
     | '/weavers'
     | '/wishlist'
   id:
@@ -127,10 +226,19 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admin'
+    | '/authenticity'
     | '/cart'
     | '/collections'
     | '/contact'
+    | '/faqs'
+    | '/handloom-process'
+    | '/journal'
     | '/profile'
+    | '/returns'
+    | '/shipping'
+    | '/silk-care'
+    | '/size-guide'
+    | '/track-order'
     | '/weavers'
     | '/wishlist'
   fileRoutesById: FileRoutesById
@@ -139,10 +247,19 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AdminRoute: typeof AdminRoute
+  AuthenticityRoute: typeof AuthenticityRoute
   CartRoute: typeof CartRoute
   CollectionsRoute: typeof CollectionsRoute
   ContactRoute: typeof ContactRoute
+  FaqsRoute: typeof FaqsRoute
+  HandloomProcessRoute: typeof HandloomProcessRoute
+  JournalRoute: typeof JournalRoute
   ProfileRoute: typeof ProfileRoute
+  ReturnsRoute: typeof ReturnsRoute
+  ShippingRoute: typeof ShippingRoute
+  SilkCareRoute: typeof SilkCareRoute
+  SizeGuideRoute: typeof SizeGuideRoute
+  TrackOrderRoute: typeof TrackOrderRoute
   WeaversRoute: typeof WeaversRoute
   WishlistRoute: typeof WishlistRoute
 }
@@ -170,6 +287,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/authenticity': {
+      id: '/authenticity'
+      path: '/authenticity'
+      fullPath: '/authenticity'
+      preLoaderRoute: typeof AuthenticityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cart': {
       id: '/cart'
       path: '/cart'
@@ -191,11 +315,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faqs': {
+      id: '/faqs'
+      path: '/faqs'
+      fullPath: '/faqs'
+      preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/handloom-process': {
+      id: '/handloom-process'
+      path: '/handloom-process'
+      fullPath: '/handloom-process'
+      preLoaderRoute: typeof HandloomProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal': {
+      id: '/journal'
+      path: '/journal'
+      fullPath: '/journal'
+      preLoaderRoute: typeof JournalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/profile': {
       id: '/profile'
       path: '/profile'
       fullPath: '/profile'
       preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/returns': {
+      id: '/returns'
+      path: '/returns'
+      fullPath: '/returns'
+      preLoaderRoute: typeof ReturnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shipping': {
+      id: '/shipping'
+      path: '/shipping'
+      fullPath: '/shipping'
+      preLoaderRoute: typeof ShippingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/silk-care': {
+      id: '/silk-care'
+      path: '/silk-care'
+      fullPath: '/silk-care'
+      preLoaderRoute: typeof SilkCareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/size-guide': {
+      id: '/size-guide'
+      path: '/size-guide'
+      fullPath: '/size-guide'
+      preLoaderRoute: typeof SizeGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/track-order': {
+      id: '/track-order'
+      path: '/track-order'
+      fullPath: '/track-order'
+      preLoaderRoute: typeof TrackOrderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/weavers': {
@@ -219,10 +399,19 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AdminRoute: AdminRoute,
+  AuthenticityRoute: AuthenticityRoute,
   CartRoute: CartRoute,
   CollectionsRoute: CollectionsRoute,
   ContactRoute: ContactRoute,
+  FaqsRoute: FaqsRoute,
+  HandloomProcessRoute: HandloomProcessRoute,
+  JournalRoute: JournalRoute,
   ProfileRoute: ProfileRoute,
+  ReturnsRoute: ReturnsRoute,
+  ShippingRoute: ShippingRoute,
+  SilkCareRoute: SilkCareRoute,
+  SizeGuideRoute: SizeGuideRoute,
+  TrackOrderRoute: TrackOrderRoute,
   WeaversRoute: WeaversRoute,
   WishlistRoute: WishlistRoute,
 }

@@ -6,15 +6,33 @@ import { useAuth } from "@/hooks/use-auth";
 const columns = [
   {
     title: "Shop",
-    items: ["Bridal Silk", "Kanchipuram", "Banarasi", "Soft Silk", "Designer"],
+    items: [
+      { label: "Bridal Silk", to: "/collections" },
+      { label: "Kanchipuram", to: "/collections" },
+      { label: "Banarasi", to: "/collections" },
+      { label: "Soft Silk", to: "/collections" },
+      { label: "Designer", to: "/collections" },
+    ],
   },
   {
     title: "Atelier",
-    items: ["Our Weavers", "Handloom Process", "Authenticity", "Silk Care", "Journal"],
+    items: [
+      { label: "Our Weavers", to: "/weavers" },
+      { label: "Handloom Process", to: "/handloom-process" },
+      { label: "Authenticity", to: "/authenticity" },
+      { label: "Silk Care", to: "/silk-care" },
+      { label: "Journal", to: "/journal" },
+    ],
   },
   {
     title: "Support",
-    items: ["Shipping", "Returns", "Size Guide", "Track Order", "FAQs"],
+    items: [
+      { label: "Shipping", to: "/shipping" },
+      { label: "Returns", to: "/returns" },
+      { label: "Size Guide", to: "/size-guide" },
+      { label: "Track Order", to: "/track-order" },
+      { label: "FAQs", to: "/faqs" },
+    ],
   },
 ];
 
@@ -55,12 +73,12 @@ export function Footer() {
                 <p className="text-[11px] uppercase tracking-[0.28em] text-accent">{col.title}</p>
                 <ul className="mt-5 space-y-3">
                   {col.items.map((item) => (
-                    <li key={item}>
+                    <li key={item.label}>
                       <Link
-                        to="/collections"
+                        to={item.to}
                         className="text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
                       >
-                        {item}
+                        {item.label}
                       </Link>
                     </li>
                   ))}
