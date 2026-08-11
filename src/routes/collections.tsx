@@ -37,12 +37,12 @@ function Collections() {
         </p>
       </Reveal>
 
-      <Reveal delay={0.1} className="mt-12 flex flex-wrap gap-3">
+      <Reveal delay={0.1} className="mt-12 flex overflow-x-auto no-scrollbar gap-3 -mx-5 px-5 pb-3 flex-nowrap sm:mx-0 sm:px-0 sm:pb-0 sm:flex-wrap snap-x snap-mandatory">
         {filters.map((filter, i) => (
           <button
             key={filter}
             type="button"
-            className={`rounded-full px-6 py-3 text-[11px] uppercase tracking-[0.2em] transition-colors duration-500 ${
+            className={`shrink-0 snap-start rounded-full px-6 py-3 text-[11px] uppercase tracking-[0.2em] transition-colors duration-500 ${
               i === 0
                 ? "bg-primary text-primary-foreground"
                 : "border border-border text-muted-foreground hover:border-accent hover:text-foreground"

@@ -58,7 +58,7 @@ function Contact() {
         <Reveal delay={0.16}>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="rounded-3xl border border-border bg-card p-9 shadow-soft"
+            className="rounded-3xl border border-border bg-card p-6 sm:p-9 shadow-soft"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               {[

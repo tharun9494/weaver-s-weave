@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Mail, Phone, ArrowUp } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const columns = [
   {
@@ -22,7 +23,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
         <div className="grid gap-14 lg:grid-cols-[1.3fr_2fr]">
           <div>
-            <span className="font-display text-3xl tracking-[0.2em]">SAHAANA</span>
+            <img
+              src={logo}
+              alt="Sahaana Logo"
+              className="h-12 w-auto object-contain brightness-0 invert opacity-100 transition-opacity duration-300 hover:opacity-100"
+            />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
               Authentic handloom silk sarees, carried from the weaver's loom directly to your
               wardrobe. No middlemen, no markups — only heritage.

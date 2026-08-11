@@ -13,7 +13,7 @@ export function CategoryGrid() {
         description="From bridal Kanchipuram with temple borders to featherlight Mysore soft silk — each weave is sourced from the cluster it was born in."
       />
 
-      <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-16 flex overflow-x-auto no-scrollbar gap-5 -mx-5 px-5 pb-6 flex-nowrap snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:mx-0 sm:px-0 sm:pb-0">
         {categories.map((category, i) => (
           <motion.div
             key={category.name}
@@ -21,6 +21,7 @@ export function CategoryGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.9, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+            className="snap-start shrink-0 w-[80vw] sm:w-auto"
           >
             <Link
               to="/collections"

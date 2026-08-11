@@ -69,7 +69,7 @@ function Weavers() {
 
         <div className="mt-20 grid gap-px overflow-hidden rounded-3xl bg-border sm:grid-cols-2">
           {weavers.map((weaver) => (
-            <div key={weaver.name} className="bg-card p-10">
+            <div key={weaver.name} className="bg-card p-6 sm:p-10">
               <p className="eyebrow text-[9px]">{weaver.cluster}</p>
               <h2 className="mt-4 font-display text-3xl text-foreground">{weaver.name}</h2>
               <p className="mt-2 text-xs uppercase tracking-[0.18em] text-accent">{weaver.years}</p>

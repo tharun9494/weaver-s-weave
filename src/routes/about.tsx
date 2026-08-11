@@ -49,7 +49,7 @@ function About() {
           </p>
         </Reveal>
         <Reveal delay={0.16}>
-          <div className="rounded-3xl border border-accent/25 bg-card p-10 shadow-soft">
+          <div className="rounded-3xl border border-accent/25 bg-card p-6 sm:p-10 shadow-soft">
             <p className="font-display text-2xl leading-relaxed text-foreground">
               “A saree should carry two names — the woman who wears it, and the woman who wove it.”
             </p>
@@ -62,7 +62,7 @@ function About() {
 
       <div className="mt-24 grid gap-px overflow-hidden rounded-3xl bg-border sm:grid-cols-2 lg:grid-cols-4">
         {values.map((value) => (
-          <div key={value.title} className="bg-card p-9">
+          <div key={value.title} className="bg-card p-6 sm:p-9">
             <span className="inline-flex rounded-full bg-accent/12 p-3 text-accent">
               <value.icon className="size-5" strokeWidth={1.4} />
             </span>

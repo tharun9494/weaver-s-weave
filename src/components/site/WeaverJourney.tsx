@@ -105,7 +105,7 @@ function SectionHeadingLight() {
             <span className="rounded-full border border-accent/40 px-6 py-3 text-[11px] uppercase tracking-[0.2em] text-primary-foreground/85">
               {step}
             </span>
-            {i < process.length - 1 ? <span className="hairline-gold w-6 opacity-60" /> : null}
+            {i < process.length - 1 ? <span className="hairline-gold w-6 opacity-60 hidden md:inline-block" /> : null}
           </motion.div>
         ))}
       </div>

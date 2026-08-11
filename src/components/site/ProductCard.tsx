@@ -27,7 +27,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
           </span>
         ) : null}
 
-        <div className="absolute right-4 top-4 flex flex-col gap-2 opacity-0 transition-all duration-500 group-hover:opacity-100">
+        <div className="absolute right-4 top-4 flex flex-col gap-2 opacity-100 lg:opacity-0 transition-all duration-500 lg:group-hover:opacity-100">
           {[Heart, Eye].map((Icon, i) => (
             <button
               key={i}
@@ -40,7 +40,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
           ))}
         </div>
 
-        <div className="absolute inset-x-4 bottom-4 translate-y-6 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <div className="absolute inset-x-4 bottom-4 translate-y-0 opacity-100 lg:translate-y-6 lg:opacity-0 transition-all duration-500 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
           <button
             type="button"
             className="flex w-full items-center justify-center gap-2 rounded-full bg-primary/95 px-6 py-3.5 text-[11px] uppercase tracking-[0.2em] text-primary-foreground backdrop-blur-md"

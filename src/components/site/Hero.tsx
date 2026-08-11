@@ -135,7 +135,7 @@ export function Hero() {
 
         <motion.div
           style={{ y: imageY }}
-          className="relative z-0 hidden lg:block"
+          className="relative z-0 mt-12 lg:mt-0"
           initial={{ opacity: 0, scale: 1.06 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
@@ -150,9 +150,9 @@ export function Hero() {
               alt="Model wearing a deep maroon handwoven Kanchipuram silk saree with gold zari border"
               width={1600}
               height={1920}
-              className="relative rounded-[220px_220px_24px_24px] object-cover shadow-luxe"
+              className="relative rounded-[120px_120px_24px_24px] sm:rounded-[220px_220px_24px_24px] object-cover shadow-luxe max-h-[500px] lg:max-h-[640px] w-full"
             />
-            <div className="absolute bottom-8 left-0 -translate-x-1/4 rounded-2xl border border-accent/30 bg-card/80 px-6 py-4 shadow-soft backdrop-blur-xl">
+            <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:left-6 sm:bottom-6 lg:bottom-8 lg:left-0 lg:-translate-x-1/4 rounded-2xl border border-accent/30 bg-card/80 px-6 py-4 shadow-soft backdrop-blur-xl">
               <p className="eyebrow text-[9px]">Woven in Kanchipuram</p>
               <p className="mt-1.5 font-display text-lg text-foreground">by Murugan & family</p>
             </div>
@@ -162,3 +162,4 @@ export function Hero() {
     </section>
   );
 }
+
