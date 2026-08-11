@@ -53,7 +53,7 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="relative mx-auto grid min-h-[100svh] max-w-7xl items-center gap-10 px-5 pb-16 pt-32 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:pt-24">
+      <div className="relative mx-auto grid min-h-[100svh] max-w-7xl items-center gap-10 px-5 pb-16 pt-12 sm:pt-32 lg:grid-cols-[1.05fr_1fr] lg:pt-24">
         <motion.div style={{ y: textY, opacity: fade }} className="relative z-10">
           <motion.p
             initial={{ opacity: 0, y: 18 }}
@@ -162,4 +162,3 @@ export function Hero() {
     </section>
   );
 }
-

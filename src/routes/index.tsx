@@ -5,6 +5,7 @@ import { CategoryGrid } from "@/components/site/CategoryGrid";
 import { WhyUs } from "@/components/site/WhyUs";
 import { WeaverJourney } from "@/components/site/WeaverJourney";
 import { Newsletter, Testimonials } from "@/components/site/Testimonials";
+import { Stories } from "@/components/site/Stories";
 
 const title = "Sahaana — Handloom Silk Sarees, Weaver Direct";
 const description =
@@ -25,6 +26,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
+      <Stories />
       <Hero />
       <FeaturedSarees />
       <CategoryGrid />

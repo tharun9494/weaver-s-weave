@@ -13,6 +13,11 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { AuthProvider } from "@/hooks/use-auth";
+import { CartWishlistProvider } from "@/hooks/use-cart-wishlist";
+import { Toaster } from "@/components/ui/sonner";
+import { AuthModal } from "@/components/site/AuthModal";
+import { BottomNav } from "@/components/site/BottomNav";
 
 function NotFoundComponent() {
   return (
@@ -128,12 +133,19 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Navbar />
-      <main>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-      </main>
-      <Footer />
+      <AuthProvider>
+        <CartWishlistProvider>
+          <Navbar />
+          <main className="pb-16 lg:pb-0">
+            {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+            <Outlet />
+          </main>
+          <Footer />
+          <Toaster position="top-right" />
+          <AuthModal />
+          <BottomNav />
+        </CartWishlistProvider>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }

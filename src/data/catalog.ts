@@ -14,6 +14,8 @@ export type Product = {
   weaver: string;
   occasion: string;
   badge?: string;
+  instagramLink?: string | null;
+  wishlistCount?: number;
 };
 
 export const products: Product[] = [

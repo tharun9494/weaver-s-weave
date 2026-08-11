@@ -12,9 +12,9 @@ export function FeaturedSarees() {
           title="Featured sarees of the season"
           description="Four pieces chosen by our master weavers this month — each one loom-numbered and traceable."
         />
-        <div className="mt-16 flex overflow-x-auto no-scrollbar gap-x-6 pb-6 -mx-5 px-5 flex-nowrap snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:mx-0 sm:px-0 sm:pb-0 gap-y-14">
-          {products.map((product, i) => (
-            <div key={product.id} className="snap-start shrink-0 w-[80vw] sm:w-auto">
+        <div className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 sm:gap-x-6 sm:gap-y-14">
+          {products.slice(0, 4).map((product, i) => (
+            <div key={product.id} className="w-full">
               <ProductCard product={product} index={i} />
             </div>
           ))}

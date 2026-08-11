@@ -12,9 +12,17 @@ import {
 import { SectionHeading } from "./Reveal";
 
 const pillars = [
-  { icon: Users, title: "Our weavers", copy: "320 families on our register, paid before dispatch." },
+  {
+    icon: Users,
+    title: "Our weavers",
+    copy: "320 families on our register, paid before dispatch.",
+  },
   { icon: Repeat, title: "Handloom process", copy: "Pit looms and jacquard, never power-loom." },
-  { icon: ShieldCheck, title: "Quality check", copy: "11-point inspection on zari, weft and fall." },
+  {
+    icon: ShieldCheck,
+    title: "Quality check",
+    copy: "11-point inspection on zari, weft and fall.",
+  },
   { icon: Gift, title: "Packaging", copy: "Muslin wrap in a reusable cedar-lined box." },
   { icon: Truck, title: "Direct delivery", copy: "From loom to doorstep in 48 hours." },
   { icon: BadgeCheck, title: "Authenticity", copy: "Silk Mark certificate with every saree." },
@@ -25,10 +33,7 @@ const pillars = [
 export function WhyUs() {
   return (
     <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-      <SectionHeading
-        eyebrow="Why buy from us"
-        title="Eight promises, kept on every order"
-      />
+      <SectionHeading eyebrow="Why buy from us" title="Eight promises, kept on every order" />
       <div className="mt-16 grid gap-px overflow-hidden rounded-3xl bg-border sm:grid-cols-2 lg:grid-cols-4">
         {pillars.map((pillar, i) => (
           <motion.div

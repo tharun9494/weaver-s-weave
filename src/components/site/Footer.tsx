@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Mail, Phone, ArrowUp } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { useAuth } from "@/hooks/use-auth";
 
 const columns = [
   {
@@ -18,15 +19,17 @@ const columns = [
 ];
 
 export function Footer() {
+  const { user } = useAuth();
+
   return (
-    <footer className="bg-gradient-maroon text-primary-foreground">
+    <footer className="hidden lg:block bg-gradient-maroon text-primary-foreground">
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
         <div className="grid gap-14 lg:grid-cols-[1.3fr_2fr]">
           <div>
             <img
               src={logo}
               alt="Sahaana Logo"
-              className="h-12 w-auto object-contain brightness-0 invert opacity-100 transition-opacity duration-300 hover:opacity-100"
+              className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
             />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
               Authentic handloom silk sarees, carried from the weaver's loom directly to your
@@ -68,9 +71,17 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-primary-foreground/15 pt-8 sm:flex-row sm:items-center">
-          <p className="text-xs text-primary-foreground/55">
-            © {new Date().getFullYear()} Sahaana Handloom. Handwoven in India.
-          </p>
+          <div className="flex flex-wrap items-center gap-6 text-xs text-primary-foreground/55">
+            <p>© {new Date().getFullYear()} Sahaana Handloom. Handwoven in India.</p>
+            {user && user.email === "ontimittatharun2002@gmail.com" && (
+              <Link
+                to="/admin"
+                className="text-accent hover:underline uppercase tracking-wider font-semibold"
+              >
+                Admin Portal
+              </Link>
+            )}
+          </div>
           <button
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

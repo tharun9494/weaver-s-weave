@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
-import { MapPin, Phone, Mail, MessageCircle, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, Instagram, Loader2 } from "lucide-react";
+import { db } from "@/lib/firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { toast } from "sonner";
 
 const title = "Contact Sahaana — Atelier, WhatsApp & Store Visit";
 const description =
@@ -27,6 +31,38 @@ const channels = [
 ];
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !email || !message) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await addDoc(collection(db, "contacts"), {
+        name,
+        email,
+        message,
+        createdAt: new Date().toISOString(),
+      });
+      toast.success("Enquiry sent! A saree consultant will connect with you shortly.");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      console.error("Firestore contact submission error: ", err);
+      toast.error("Could not send enquiry. Please check database permissions.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-5 pb-28 pt-36 sm:px-8 sm:pt-44">
       <Reveal>
@@ -57,49 +93,68 @@ function Contact() {
 
         <Reveal delay={0.16}>
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
             className="rounded-3xl border border-border bg-card p-6 sm:p-9 shadow-soft"
           >
             <div className="grid gap-5 sm:grid-cols-2">
-              {[
-                { id: "name", label: "Name", type: "text" },
-                { id: "email", label: "Email", type: "email" },
-              ].map((field) => (
-                <div key={field.id}>
-                  <label
-                    htmlFor={field.id}
-                    className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground"
-                  >
-                    {field.label}
-                  </label>
-                  <input
-                    id={field.id}
-                    type={field.type}
-                    required
-                    className="mt-2 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-accent"
-                  />
-                </div>
-              ))}
+              <div>
+                <label
+                  htmlFor="contactName"
+                  className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground"
+                >
+                  Name
+                </label>
+                <input
+                  id="contactName"
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="mt-2 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-accent"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="contactEmail"
+                  className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground"
+                >
+                  Email
+                </label>
+                <input
+                  id="contactEmail"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="mt-2 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-accent"
+                />
+              </div>
             </div>
+
             <div className="mt-5">
               <label
-                htmlFor="message"
+                htmlFor="contactMessage"
                 className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground"
               >
                 How can we help?
               </label>
               <textarea
-                id="message"
+                id="contactMessage"
                 rows={5}
                 required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="mt-2 w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-accent"
               />
             </div>
+
             <button
               type="submit"
-              className="mt-7 w-full rounded-full bg-primary px-8 py-4 text-[12px] uppercase tracking-[0.2em] text-primary-foreground transition-transform duration-500 hover:-translate-y-0.5"
+              disabled={submitting}
+              className="mt-7 w-full flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-[12px] uppercase tracking-[0.2em] text-primary-foreground transition-transform duration-500 hover:-translate-y-0.5 disabled:opacity-50 cursor-pointer font-sans"
             >
-              Send enquiry
+              {submitting ? <Loader2 className="size-4 animate-spin" /> : "Send enquiry"}
             </button>
           </form>
         </Reveal>

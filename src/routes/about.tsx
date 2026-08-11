@@ -19,10 +19,26 @@ export const Route = createFileRoute("/about")({
 });
 
 const values = [
-  { icon: Compass, title: "Mission", copy: "Make authentic handloom silk accessible without eroding the artisan's margin." },
-  { icon: Eye, title: "Vision", copy: "A thousand weaver families earning a living wage from their own looms by 2030." },
-  { icon: HeartHandshake, title: "Customer trust", copy: "Traceable looms, honest pricing, and a 7-day no-questions return." },
-  { icon: BadgeCheck, title: "Authenticity", copy: "Silk Mark certification and a loom number on every single saree." },
+  {
+    icon: Compass,
+    title: "Mission",
+    copy: "Make authentic handloom silk accessible without eroding the artisan's margin.",
+  },
+  {
+    icon: Eye,
+    title: "Vision",
+    copy: "A thousand weaver families earning a living wage from their own looms by 2030.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Customer trust",
+    copy: "Traceable looms, honest pricing, and a 7-day no-questions return.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Authenticity",
+    copy: "Silk Mark certification and a loom number on every single saree.",
+  },
 ];
 
 function About() {
@@ -44,8 +60,8 @@ function About() {
             taking a cut larger than her own.
           </p>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            We rebuilt that chain in reverse. Today, 320 weaver families sell through Sahaana with no
-            agent in between — they set the loom price, we handle the craft of presenting it.
+            We rebuilt that chain in reverse. Today, 320 weaver families sell through Sahaana with
+            no agent in between — they set the loom price, we handle the craft of presenting it.
           </p>
         </Reveal>
         <Reveal delay={0.16}>
