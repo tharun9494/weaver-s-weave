@@ -51,7 +51,7 @@ function Weavers() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <p className="eyebrow">Our weavers</p>
-          <h1 className="mt-4 max-w-3xl text-4xl leading-[1.05] text-foreground sm:text-6xl">
+          <h1 className="mt-4 max-w-3xl text-3xl sm:text-6xl leading-[1.05] text-foreground">
             The people whose hands <em className="text-gold-gradient not-italic">made it</em>
           </h1>
         </Reveal>
@@ -67,13 +67,21 @@ function Weavers() {
           />
         </Reveal>
 
-        <div className="mt-20 grid gap-px overflow-hidden rounded-3xl bg-border sm:grid-cols-2">
+        <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-border sm:grid-cols-2">
           {weavers.map((weaver) => (
-            <div key={weaver.name} className="bg-card p-6 sm:p-10">
-              <p className="eyebrow text-[9px]">{weaver.cluster}</p>
-              <h2 className="mt-4 font-display text-3xl text-foreground">{weaver.name}</h2>
-              <p className="mt-2 text-xs uppercase tracking-[0.18em] text-accent">{weaver.years}</p>
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{weaver.copy}</p>
+            <div key={weaver.name} className="bg-card p-4 sm:p-10 flex flex-col justify-between">
+              <div>
+                <p className="eyebrow text-[8px] sm:text-[9px] truncate">{weaver.cluster}</p>
+                <h2 className="mt-3 font-display text-lg sm:text-3xl text-foreground truncate">
+                  {weaver.name}
+                </h2>
+                <p className="mt-1 text-[9px] sm:text-xs uppercase tracking-[0.18em] text-accent truncate">
+                  {weaver.years}
+                </p>
+                <p className="mt-4 text-[10px] leading-relaxed text-muted-foreground sm:text-sm">
+                  {weaver.copy}
+                </p>
+              </div>
             </div>
           ))}
         </div>

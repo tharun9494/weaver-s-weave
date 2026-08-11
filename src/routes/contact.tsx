@@ -67,24 +67,31 @@ function Contact() {
     <div className="mx-auto max-w-7xl px-5 pb-28 pt-36 sm:px-8 sm:pt-44">
       <Reveal>
         <p className="eyebrow">Contact</p>
-        <h1 className="mt-4 max-w-2xl text-4xl leading-[1.05] text-foreground sm:text-6xl">
+        <h1 className="mt-4 max-w-2xl text-3xl sm:text-6xl leading-[1.05] text-foreground">
           Speak to a <em className="text-gold-gradient not-italic">saree consultant</em>
         </h1>
       </Reveal>
 
       <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1.1fr]">
         <Reveal delay={0.08}>
-          <ul className="space-y-px overflow-hidden rounded-3xl bg-border">
+          <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-border">
             {channels.map((channel) => (
-              <li key={channel.label} className="flex items-center gap-5 bg-card p-6">
-                <span className="inline-flex rounded-full bg-accent/12 p-3 text-accent">
-                  <channel.icon className="size-5" strokeWidth={1.4} />
-                </span>
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                    {channel.label}
-                  </p>
-                  <p className="mt-1 text-sm text-foreground">{channel.value}</p>
+              <li
+                key={channel.label}
+                className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 bg-card p-4 sm:p-6"
+              >
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-5 w-full">
+                  <span className="inline-flex rounded-full bg-accent/12 p-2.5 sm:p-3 text-accent shrink-0">
+                    <channel.icon className="size-4 sm:size-5" strokeWidth={1.4} />
+                  </span>
+                  <div className="min-w-0 w-full overflow-hidden">
+                    <p className="text-[9px] sm:text-[11px] uppercase tracking-[0.2em] text-muted-foreground truncate">
+                      {channel.label}
+                    </p>
+                    <p className="mt-1 text-xs sm:text-sm text-foreground break-words font-sans">
+                      {channel.value}
+                    </p>
+                  </div>
                 </div>
               </li>
             ))}

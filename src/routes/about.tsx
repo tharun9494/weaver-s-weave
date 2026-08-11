@@ -46,7 +46,7 @@ function About() {
     <div className="mx-auto max-w-7xl px-5 pb-28 pt-36 sm:px-8 sm:pt-44">
       <Reveal>
         <p className="eyebrow">Our story</p>
-        <h1 className="mt-4 max-w-3xl text-4xl leading-[1.05] text-foreground sm:text-6xl">
+        <h1 className="mt-4 max-w-3xl text-3xl sm:text-6xl leading-[1.05] text-foreground">
           Three decades between the loom and{" "}
           <em className="text-gold-gradient not-italic">your wardrobe</em>
         </h1>
@@ -76,14 +76,20 @@ function About() {
         </Reveal>
       </div>
 
-      <div className="mt-24 grid gap-px overflow-hidden rounded-3xl bg-border sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-24 grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-border sm:grid-cols-2 lg:grid-cols-4">
         {values.map((value) => (
-          <div key={value.title} className="bg-card p-6 sm:p-9">
-            <span className="inline-flex rounded-full bg-accent/12 p-3 text-accent">
-              <value.icon className="size-5" strokeWidth={1.4} />
-            </span>
-            <h2 className="mt-6 font-display text-xl text-foreground">{value.title}</h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{value.copy}</p>
+          <div key={value.title} className="bg-card p-4 sm:p-9 flex flex-col justify-between">
+            <div>
+              <span className="inline-flex rounded-full bg-accent/12 p-2 sm:p-3 text-accent">
+                <value.icon className="size-4 sm:size-5" strokeWidth={1.4} />
+              </span>
+              <h2 className="mt-4 font-display text-sm sm:text-xl text-foreground">
+                {value.title}
+              </h2>
+              <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground sm:text-sm">
+                {value.copy}
+              </p>
+            </div>
           </div>
         ))}
       </div>

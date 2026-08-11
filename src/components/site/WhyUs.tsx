@@ -34,7 +34,7 @@ export function WhyUs() {
   return (
     <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
       <SectionHeading eyebrow="Why buy from us" title="Eight promises, kept on every order" />
-      <div className="mt-16 grid gap-px overflow-hidden rounded-3xl bg-border sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-border sm:grid-cols-2 lg:grid-cols-4">
         {pillars.map((pillar, i) => (
           <motion.div
             key={pillar.title}
@@ -42,13 +42,19 @@ export function WhyUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.75, delay: (i % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="group bg-card p-8 transition-colors duration-500 hover:bg-secondary"
+            className="group bg-card p-4 sm:p-8 transition-colors duration-500 hover:bg-secondary flex flex-col justify-between"
           >
-            <span className="inline-flex rounded-full bg-accent/12 p-3 text-accent transition-transform duration-500 group-hover:scale-110">
-              <pillar.icon className="size-5" strokeWidth={1.4} />
-            </span>
-            <h3 className="mt-6 font-display text-xl text-foreground">{pillar.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{pillar.copy}</p>
+            <div>
+              <span className="inline-flex rounded-full bg-accent/12 p-2 sm:p-3 text-accent transition-transform duration-500 group-hover:scale-110">
+                <pillar.icon className="size-4 sm:size-5" strokeWidth={1.4} />
+              </span>
+              <h3 className="mt-4 font-display text-sm sm:text-xl text-foreground">
+                {pillar.title}
+              </h3>
+              <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground sm:text-sm">
+                {pillar.copy}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>
