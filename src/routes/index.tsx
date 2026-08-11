@@ -7,7 +7,7 @@ import { WeaverJourney } from "@/components/site/WeaverJourney";
 import { Newsletter, Testimonials } from "@/components/site/Testimonials";
 import { Stories } from "@/components/site/Stories";
 
-const title = "Sahaana — Handloom Silk Sarees, Weaver Direct";
+const title = "Sri Varee Pattu — Handloom Silk Sarees, Weaver Direct";
 const description =
   "Authentic handwoven Kanchipuram, Banarasi and soft silk sarees sourced directly from weaver families. Silk Mark certified, no middlemen, fair loom pricing.";
 

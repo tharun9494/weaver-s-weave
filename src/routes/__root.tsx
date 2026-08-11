@@ -84,13 +84,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sahaana — Handloom Silk Sarees, Weaver Direct" },
+      { title: "Sri Varee Pattu — Handloom Silk Sarees, Weaver Direct" },
       {
         name: "description",
         content:
           "Authentic handwoven silk sarees sourced directly from weaver families. Silk Mark certified, no middlemen.",
       },
-      { name: "author", content: "Sahaana Handloom" },
+      { name: "author", content: "Sri Varee Pattu" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -105,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,

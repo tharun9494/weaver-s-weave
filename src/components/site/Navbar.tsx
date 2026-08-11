@@ -57,7 +57,7 @@ export function Navbar() {
           <Link to="/" className="group flex items-center">
             <img
               src={logo}
-              alt="Sahaana"
+              alt="Sri Varee Pattu"
               className="h-10 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </Link>

@@ -46,7 +46,7 @@ export function Footer() {
           <div>
             <img
               src={logo}
-              alt="Sahaana Logo"
+              alt="Sri Varee Pattu Logo"
               className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
             />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
@@ -90,7 +90,7 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-primary-foreground/15 pt-8 sm:flex-row sm:items-center">
           <div className="flex flex-wrap items-center gap-6 text-xs text-primary-foreground/55">
-            <p>© {new Date().getFullYear()} Sahaana Handloom. Handwoven in India.</p>
+            <p>© {new Date().getFullYear()} Sri Varee Pattu. Handwoven in India.</p>
             {user && user.email === "ontimittatharun2002@gmail.com" && (
               <Link
                 to="/admin"
